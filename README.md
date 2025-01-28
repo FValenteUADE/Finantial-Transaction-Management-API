@@ -95,7 +95,7 @@ Lista las transacciones de un usuario basado en los parámetros proporcionados.
 
 2. Navega al directorio del proyecto:
     ```bash
-    cd financial-transaction-management-api
+    cd Financial-Transaction-Management-API
 
 3. Construye el proyecto con Maven:
     ```bash
