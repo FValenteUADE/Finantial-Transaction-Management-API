@@ -91,7 +91,7 @@ Lista las transacciones de un usuario basado en los parámetros proporcionados.
 
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/tu-usuario/financial-transaction-management-api.git
+   git clone https://github.com/FValenteUADE/Finantial-Transaction-Management-API.git
 
 2. Navega al directorio del proyecto:
     ```bash
