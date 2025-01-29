@@ -95,16 +95,10 @@ Lista las transacciones de un usuario basado en los parámetros proporcionados.
 
 2. Navega al directorio del proyecto:
     ```bash
-    cd Financial-Transaction-Management-API
+    cd Finantial-Transaction-Management-API
 
-3. Construye el proyecto con Maven:
-    ```bash
-    mvn clean install
- 
-4. Ejecuta la aplicación:
-    ```bash
-    mvn spring-boot:run
-
+3. Abre el proyecto desde IntelliJ / VisualStudio Code / o similar.
+4. Inicia / Ejecuta el proyecto.
 ## Ingreso a la Base de Datos H2
 
 1. Ingresamos al sitio  
