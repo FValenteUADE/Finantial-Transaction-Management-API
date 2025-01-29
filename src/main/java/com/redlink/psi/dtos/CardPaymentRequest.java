@@ -1,20 +1,26 @@
 package com.redlink.psi.dtos;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Positive;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 public class CardPaymentRequest {
     @JsonProperty("payment_id")
+    @NotBlank(message = "Payment ID is required.")
     private String paymentId;
 
     @JsonProperty("card_id")
+    @NotBlank(message = "Card ID is required.")
     private String cardId;
 
     @JsonProperty("user_id")
+    @NotBlank(message = "User ID is required.")
     private String userId;
 
+    @Positive(message = "Amount must be positive.")
     private BigDecimal amount;
     private String currency;
     private String status;

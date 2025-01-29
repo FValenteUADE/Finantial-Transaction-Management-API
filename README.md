@@ -105,3 +105,13 @@ Lista las transacciones de un usuario basado en los parámetros proporcionados.
     ```bash
     mvn spring-boot:run
 
+## Ingreso a la Base de Datos H2
+
+1. Ingresamos al sitio  
+    
+    #### http://localhost:8080/h2-console
+2. En la variable "JDBC URL":
+    #### jdbc:h2:mem:testdb
+3. En la variable "User Name":
+    #### sa
+4. En la variable "Password" no ingresamos nada.
