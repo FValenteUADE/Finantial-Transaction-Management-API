@@ -1,0 +1,182 @@
+{
+	"info": {
+		"_postman_id": "9fe2d1bd-7c9c-443e-9555-a603a8238353",
+		"name": "Colección Prueba Red Link",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15581731",
+		"_collection_link": "https://bold-spaceship-321006.postman.co/workspace/Team-Workspace~0a9b3eeb-28ea-4f9e-8d8b-a492d48eb02e/collection/15581731-9fe2d1bd-7c9c-443e-9555-a603a8238353?action=share&source=collection_link&creator=15581731"
+	},
+	"item": [
+		{
+			"name": "Obtener Transacción Exitosa",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Listado Transacciones",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Transacción Tarjeta",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let responseData = pm.response.json();\r",
+							"pm.environment.set(\"transactionId\", responseData.payment_id);\r",
+							"\r",
+							"console.log(\"Payment ID guardado:\", responseData.payment_id);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"payment_id\": \"abc1203\", \r\n    \"card_id\": \"43211234\", \r\n    \"user_id\": \"113411\", \r\n    \"amount\": 100, \r\n    \"currency\": \"USD\", \r\n    \"status\": \"COMPLETED\", \r\n    \"created_at\": \"2024-10-15T10:20:00Z\", \r\n    \"merchant\": { \r\n        \"name\": \"Amazon\", \r\n        \"merchant_id\": \"12309\" \r\n    }, \r\n    \"mcc_code\": 5411 \r\n} "
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/transactions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"transactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Transacción Bancaria",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let responseData = pm.response.json();\r",
+							"pm.environment.set(\"transactionId\", responseData.transaction_id);\r",
+							"\r",
+							"console.log(\"Transaction ID guardado:\", responseData.transaction_id);\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"transaction_id\": \"def04156\", \r\n    \"user_id\": \"113411\", \r\n    \"amount\": 250, \r\n    \"currency\": \"EUR\", \r\n    \"status\": \"PENDING\", \r\n    \"created_at\": \"2024-10-14T08:45:30Z\", \r\n    \"bank_code\": \"BANK123\", \r\n    \"recipient_account\": \"DE89370400440532013000\" \r\n} "
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/transactions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"transactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Transacción P2P",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let responseData = pm.response.json();\r",
+							"pm.environment.set(\"transactionId\", responseData.transfer_id);\r",
+							"\r",
+							"console.log(\"Transfer ID guardado:\", responseData.transfer_id);\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"transfer_id\": \"ghi7819\", \r\n    \"sender_id\": \"113411\", \r\n    \"recipient_id\": \"113412\", \r\n    \"amount\": 50, \r\n    \"currency\": \"USD\", \r\n    \"status\": \"COMPLETED\", \r\n    \"created_at\": \"2024-10-14T15:30:45Z\", \r\n    \"note\": \"Cena en restaurante\" \r\n} "
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/transactions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"transactions"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

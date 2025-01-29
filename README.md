@@ -4,6 +4,11 @@
 
 La **API de Manejo de Transacciones Financieras de Pago** es una solución diseñada para gestionar transacciones financieras de diferentes tipos, incluyendo pagos con tarjeta, transferencias bancarias y transferencias P2P. La API está construida utilizando Spring Boot y proporciona endpoints RESTful para crear, consultar y listar transacciones.
 
+## Colección de Postman
+
+Para ejecutar los endpoints públicos de la API **se debe utilizar la colección de Postman** que se encuentra dentro del proyecto.
+  #### Dentro de la colección se encuentran disponible tres (3) requests para crear Transacciones y dos para ejecutar los dos métodos faltantes.
+
 ## Acerca de la API
 
 Esta fue diseñada con las siguientes consideraciones técnicas en mente:
